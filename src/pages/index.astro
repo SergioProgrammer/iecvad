@@ -63,13 +63,20 @@ const pageDescription =
 			style="background: radial-gradient(circle at 10% 30%, rgba(173,216,255,0.5), transparent 50%), radial-gradient(circle at 80% 20%, rgba(210,235,255,0.8), transparent 45%), radial-gradient(circle at 50% 90%, rgba(191,219,254,0.45), transparent 40%);"
 		></div>
 
-		<header class="flex min-h-screen flex-col px-6 pt-8 pb-12 sm:pb-16">
-			<div class="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8">
-					<nav class="flex w-full items-center justify-between rounded-full border border-sky-100 bg-white/90 px-6 py-4 shadow-sm shadow-sky-100/60">
-						<a class="flex items-center no-underline" href="/">
-							<img src="/favicon.png" alt="Logo IECVAD" class="w-auto opacity-90 transition hover:opacity-100" style="height: 4rem;" />
+		<header class="flex min-h-screen flex-col px-4 pt-6 pb-10 sm:px-6 sm:pt-8 sm:pb-16">
+			<div class="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-6 sm:gap-8">
+				<nav
+					class="flex flex-col gap-4 rounded-full border border-sky-100 bg-white/95 px-4 py-4 shadow-sm shadow-sky-100/60 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:py-5"
+				>
+					<a class="flex items-center justify-center no-underline" href="/">
+						<img
+							src="/favicon.png"
+							alt="Logo IECVAD"
+							class="w-auto opacity-90 transition hover:opacity-100"
+							style="height: 2.5rem;"
+						/>
 					</a>
-					<div class="flex items-center gap-6 text-sm font-medium text-stone-700">
+					<div class="flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-stone-700 sm:justify-end">
 						<a class="no-underline transition hover:text-sky-700" href="/proyecto">Proyecto</a>
 						<a class="no-underline transition hover:text-sky-700" href="/objetivos">Objetivos</a>
 						<a class="no-underline transition hover:text-sky-700" href="/investigadores">Investigadores</a>
@@ -78,30 +85,30 @@ const pageDescription =
 				</nav>
 
 				<div class="flex flex-1 items-center">
-					<section class="w-full rounded-[40px] border border-sky-100 bg-white/85 p-8 shadow-2xl shadow-sky-100/60 lg:p-12">
-						<div class="grid gap-12 lg:grid-cols-[3fr,2fr] lg:items-center">
-							<div class="space-y-8">
-								<p class="text-xs font-semibold uppercase tracking-[0.4em] text-sky-700">
+					<section class="w-full rounded-[32px] border border-sky-100 bg-white/90 p-5 shadow-2xl shadow-sky-100/60 sm:p-8 lg:rounded-[40px] lg:p-12">
+						<div class="grid gap-10 lg:grid-cols-[3fr,2fr] lg:items-center">
+							<div class="space-y-6 sm:space-y-8">
+								<p class="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-sky-700 sm:text-xs">
 									Proyecto de investigación
 								</p>
-								<h1 class="text-6xl font-semibold leading-tight text-stone-900 sm:text-6xl lg:text-6xl">
+								<h1 class="text-3xl font-semibold leading-tight text-stone-900 sm:text-4xl lg:text-5xl">
 									Inclusión educativa y calidad de vida del alumnado con discapacidad:
 									<span class="text-sky-700">el efecto del COVID-19 en Canarias</span>
 								</h1>
-								<p class="max-w-3xl text-lg text-stone-700">
+								<p class="max-w-3xl text-base text-stone-700 sm:text-lg">
 									Estudiamos cómo la pandemia transformó la respuesta educativa en todos los niveles —
 									Ed. Primaria, ESO, Bachillerato, Formación Profesional y Programas de Formación Profesional
 									Adaptada — para garantizar derechos, apoyos personalizados y bienestar integral.
 								</p>
-								<div class="flex flex-wrap gap-3">
+								<div class="flex flex-col gap-3 sm:flex-row">
 									<a
 										href="/proyecto"
-										class="no-underline rounded-full bg-wite px-6 py-3 text-sm font-semibold text-white shadow-md shadow-sky-200 transition hover:bg-sky-100"
+										class="no-underline rounded-full bg-sky-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-md shadow-sky-200 transition hover:bg-sky-500"
 										>Explorar el proyecto</a
 									>
 									<a
 										href="/transferencia"
-										class="no-underline rounded-full border border-sky-200 px-6 py-3 text-sm font-semibold text-sky-800 transition hover:border-sky-400 hover:text-sky-600"
+										class="no-underline rounded-full border border-sky-200 px-6 py-3 text-center text-sm font-semibold text-sky-800 transition hover:border-sky-400 hover:text-sky-600"
 										>Plan de transferencia</a
 									>
 								</div>
@@ -117,7 +124,7 @@ const pageDescription =
 										Financiado por
 									</p>
 									<div class="flex flex-wrap items-center gap-4">
-										<div class="flex items-center justify-center rounded-2xl bg-white px-5 py-3 shadow-sm shadow-sky-100/60">
+										<div class="flex w-full items-center justify-center rounded-2xl bg-white px-4 py-3 shadow-sm shadow-sky-100/60 sm:w-auto sm:px-5">
 											<img
 												src="/logo_fundacion-cajacanarias.png"
 												alt="Fundación CajaCanarias"
@@ -125,7 +132,7 @@ const pageDescription =
 												loading="lazy"
 											/>
 										</div>
-										<div class="flex items-center justify-center rounded-2xl bg-white px-4 py-2 shadow-sm shadow-sky-100/60">
+										<div class="flex w-full items-center justify-center rounded-2xl bg-white px-4 py-2 shadow-sm shadow-sky-100/60 sm:w-auto">
 											<img
 												src="/obrasocial-caixa.png"
 												alt="Obra Social La Caixa"
@@ -137,14 +144,14 @@ const pageDescription =
 								</div>
 							</div>
 
-							<div class="rounded-3xl border border-sky-100/80 bg-white/90 p-6 shadow-xl shadow-sky-100/50">
-								<h2 class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">
+							<div class="rounded-3xl border border-sky-100/80 bg-white/95 p-5 shadow-xl shadow-sky-100/50 sm:p-6">
+								<h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700 sm:text-sm">
 									Indicadores Clave
 								</h2>
-								<div class="mt-6 grid gap-6 sm:grid-cols-2">
+								<div class="mt-4 grid gap-4 sm:grid-cols-2">
 									{indicadores.map(({ valor, etiqueta }) => (
-										<div class="rounded-2xl border border-sky-100 bg-sky-50/70 p-4 text-center">
-											<p class="text-3xl font-semibold text-stone-900">{valor}</p>
+										<div class="rounded-2xl border border-sky-100 bg-sky-50/70 px-4 py-5 text-center">
+											<p class="text-2xl font-semibold text-stone-900 sm:text-3xl">{valor}</p>
 											<p class="mt-2 text-xs text-stone-600">{etiqueta}</p>
 										</div>
 									))}
@@ -159,29 +166,29 @@ const pageDescription =
 			</div>
 		</header>
 
-		<main class="px-6 pb-20">
+		<main class="px-4 pb-16 sm:px-6 sm:pb-20">
 			<div class="mx-auto max-w-6xl space-y-10">
-				<section class="rounded-[32px] border border-sky-100 bg-white/80 p-8 shadow-xl shadow-sky-100/60">
-					<div class="grid gap-8 lg:grid-cols-[2fr,3fr] lg:items-center">
+				<section class="rounded-[32px] border border-sky-100 bg-white/85 p-6 shadow-xl shadow-sky-100/60 sm:p-8">
+					<div class="grid gap-6 lg:grid-cols-[2fr,3fr] lg:items-center">
 						<div class="space-y-4">
 							<p class="text-xs font-semibold uppercase tracking-[0.35em] text-sky-700">Resumen</p>
-							<h2 class="text-3xl font-semibold text-stone-900">
+							<h2 class="text-2xl font-semibold text-stone-900 sm:text-3xl">
 								Una hoja de ruta para fortalecer la inclusión educativa
 							</h2>
-							<p class="text-stone-700">
+							<p class="text-sm text-stone-700 sm:text-base">
 								Coordinamos universidades, administración y centros educativos para estudiar cómo se
 								garantiza la calidad de vida del alumnado con discapacidad después de la pandemia. Esta
 								landing presenta el proyecto y te guía a cada bloque temático.
 							</p>
 						</div>
 						<div class="grid gap-4 sm:grid-cols-2">
-								{secciones.map(({ titulo, enlace }) => (
-									<a
-										href={enlace}
-										class="no-underline rounded-2xl border border-sky-100 bg-sky-50/60 px-6 py-5 text-left text-sm font-semibold text-stone-800 transition hover:border-sky-300 hover:bg-sky-100"
-									>
-										Visitar {titulo}
-									</a>
+							{secciones.map(({ titulo, enlace }) => (
+								<a
+									href={enlace}
+									class="no-underline rounded-2xl border border-sky-100 bg-sky-50/60 px-4 py-4 text-left text-sm font-semibold text-stone-800 transition hover:border-sky-300 hover:bg-sky-100"
+								>
+									Visitar {titulo}
+								</a>
 							))}
 						</div>
 					</div>
@@ -210,7 +217,7 @@ const pageDescription =
 			</div>
 		</main>
 
-		<section class="px-6 pb-16">
+		<section class="px-4 pb-16 sm:px-6">
 			<div class="mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-sky-100 bg-white shadow-xl shadow-sky-100/80">
 				<img
 					src="/img_con.jpg"
@@ -218,8 +225,8 @@ const pageDescription =
 					class="w-full object-cover"
 					loading="lazy"
 				/>
-				<div class="flex flex-col gap-4 px-6 py-8 md:flex-row md:items-center md:justify-between">
-					<div class="text-left">
+				<div class="flex flex-col gap-4 px-4 py-6 md:flex-row md:items-center md:justify-between md:px-6 md:py-8">
+					<div class="text-left md:max-w-3xl">
 						<h2 class="text-xl font-semibold text-stone-900">
 							Convocatoria de Ayudas a Proyectos de Investigación 2020
 						</h2>
@@ -229,7 +236,7 @@ const pageDescription =
 						</p>
 					</div>
 					<a
-						class="inline-flex items-center justify-center rounded-full border border-sky-200 px-5 py-3 text-base font-semibold text-white no-underline transition hover:border-sky-100 hover:bg-sky-600 hover:text-white bg-sky-100"
+						class="inline-flex w-full items-center justify-center rounded-full border border-sky-200 bg-sky-500 px-5 py-3 text-base font-semibold text-white no-underline transition hover:border-sky-300 hover:bg-sky-600 md:w-auto"
 						href="https://www.cajacanarias.com/agenda/ayudas-proyectos-investigacion-2020/#Resoluci%C3%B3n--"
 						target="_blank"
 						rel="noopener noreferrer"
