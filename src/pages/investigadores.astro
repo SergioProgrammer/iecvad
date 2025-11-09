@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const investigadores = [
+	{
+		nombre: 'Dra. Ana Pérez Martín',
+		rol: 'Investigadora Principal',
+		institucion: 'Universidad de La Laguna',
+		enfoque: 'Políticas públicas, evaluación de programas inclusivos y liderazgo femenino en educación.'
+	},
+	{
+		nombre: 'Dr. Sergio Hernández Delgado',
+		rol: 'Co-investigador',
+		institucion: 'Universidad de Las Palmas de Gran Canaria',
+		enfoque: 'Calidad de vida, salud mental y discapacidad en contextos educativos y comunitarios.'
+	},
+	{
+		nombre: 'Dra. Laura Cabrera Gómez',
+		rol: 'Responsable de metodología',
+		institucion: 'Consejería de Educación, Gobierno de Canarias',
+		enfoque: 'Análisis de datos longitudinales, evaluación de impacto y mejora normativa.'
+	},
+	{
+		nombre: 'Equipo PFPA y FP',
+		rol: 'Nodos territoriales',
+		institucion: 'Centros colaboradores de las siete islas',
+		enfoque: 'Implementación de estrategias inclusivas, acompañamiento docente y tutoría personalizada.'
+	}
+];
+
+const redes = [
+	'Grupos de investigación en inclusión',
+	'Servicios de orientación educativa',
+	'Asociaciones de familias y alumnado',
+	'Entidades sociales y sanitarias',
+	'Redes de innovación y tecnología accesible'
+];
+
+const pageTitle = 'Investigadores | Inclusión educativa y calidad de vida';
+const pageDescription =
+	'Equipo investigador del proyecto sobre inclusión educativa y calidad de vida del alumnado con discapacidad en Canarias.';
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<div class="relative isolate px-6 pb-20 pt-12">
+		<div
+			class="pointer-events-none absolute inset-0 -z-10 opacity-70 blur-3xl"
+			aria-hidden="true"
+			style="background: radial-gradient(circle at 15% 30%, rgba(189,229,255,0.9), transparent 45%), radial-gradient(circle at 80% 10%, rgba(214,238,255,0.7), transparent 40%);"
+		></div>
+
+		<article class="mx-auto max-w-5xl space-y-16">
+			<header class="space-y-6 text-center">
+				<p class="text-xs font-semibold uppercase tracking-[0.4em] text-sky-700">
+					Investigadores
+				</p>
+				<h1 class="text-4xl font-semibold text-stone-900">Equipo interdisciplinar</h1>
+				<p class="mx-auto max-w-3xl text-base text-stone-700">
+					La investigación se apoya en especialistas en políticas públicas, análisis de datos, calidad de vida
+					y acompañamiento educativo. Los nodos territoriales garantizan que cada isla tenga una voz activa en
+					el proceso de diagnóstico y propuesta.
+				</p>
+			</header>
+
+			<section class="grid gap-6 md:grid-cols-2">
+				{investigadores.map(({ nombre, rol, institucion, enfoque }) => (
+					<article class="rounded-3xl border border-sky-100 bg-white/80 p-6 shadow-md shadow-sky-100/60">
+						<p class="text-xs font-semibold uppercase tracking-[0.35em] text-sky-700">{rol}</p>
+						<h2 class="mt-2 text-2xl font-semibold text-stone-900">{nombre}</h2>
+						<p class="text-sm text-stone-600">{institucion}</p>
+						<p class="mt-4 text-sm text-stone-700">{enfoque}</p>
+					</article>
+				))}
+			</section>
+
+			<section class="rounded-[32px] border border-sky-100 bg-gradient-to-br from-white via-sky-50 to-sky-100/70 p-8 shadow-xl shadow-sky-100/50">
+				<div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+					<div class="space-y-4 text-stone-700">
+						<h2 class="text-2xl font-semibold text-stone-900">Alianzas y redes</h2>
+						<p>
+							El proyecto no se entiende sin la colaboración estrecha con centros educativos, servicios
+							sociales e iniciativas ciudadanas. Las alianzas permiten validar resultados y generar
+							productos aplicables desde el primer día.
+						</p>
+					</div>
+					<ul class="space-y-3 rounded-3xl border border-white/60 bg-white/80 p-6 text-sm text-stone-700">
+						{redes.map((item) => (
+							<li>• {item}</li>
+						))}
+					</ul>
+				</div>
+			</section>
+		</article>
+	</div>
+</Layout>

@@ -1,22 +1,26 @@
+---
+import "../styles/global.css";
+
+const {
+	title = "Inclusión Educativa y Calidad de Vida del Alumnado con Discapacidad",
+	description = "Proyecto de investigación sobre el impacto del COVID-19 en la respuesta educativa del alumnado con discapacidad en Canarias."
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+		<link rel="apple-touch-icon" href="/favicon.png" />
+		<slot name="head" />
 	</head>
-	<body>
-		<slot />
+	<body class="antialiased">
+		<div class="min-h-screen bg-transparent">
+			<slot />
+		</div>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

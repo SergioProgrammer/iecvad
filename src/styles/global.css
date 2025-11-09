@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+	--font-sans: "Inter", "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		sans-serif;
+	--font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+	--color-bg: #f7fbff;
+	--color-surface: #ecf5ff;
+	--color-card: #ffffff;
+	--color-muted: #5c6b7d;
+	--color-text: #1f2a37;
+	--color-accent: #6aa5ff;
+	--color-accent-strong: #2563eb;
+}
+
+:root {
+	font-family: var(--font-sans);
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-size: 18px;
+	min-height: 100%;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-image: radial-gradient(circle at 15% 20%, rgba(99, 179, 237, 0.12), transparent 55%),
+		radial-gradient(circle at 80% 10%, rgba(137, 207, 255, 0.2), transparent 55%),
+		linear-gradient(135deg, var(--color-bg), var(--color-surface));
+	color: var(--color-text);
+}
+
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+	color: var(--color-accent-strong);
+	font-weight: 600;
+	text-decoration: none !important;
+	transition: color 150ms ease;
+	text-decoration-color: transparent !important;
+}
+
+a:hover,
+a:focus {
+	color: var(--color-accent);
+}
+
+code,
+pre {
+	font-family: var(--font-mono);
+}
+
+p {
+	color: var(--color-muted);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+::selection {
+	background: color-mix(in srgb, var(--color-accent) 70%, transparent);
+	color: white;
+}

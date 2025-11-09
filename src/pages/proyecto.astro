@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const componentes = [
+	{
+		titulo: 'Cartografía de recursos',
+		detalle:
+			'Identificación de apoyos especializados, servicios de orientación y redes comunitarias disponibles en cada isla.'
+	},
+	{
+		titulo: 'Modalidades de enseñanza',
+		detalle:
+			'Análisis de la relación entre modelos presenciales, híbridos y virtuales con el bienestar del alumnado.'
+	},
+	{
+		titulo: 'Tecnologías accesibles',
+		detalle:
+			'Evaluación del uso de herramientas digitales y su adaptación a distintas necesidades sensoriales y cognitivas.'
+	},
+	{
+		titulo: 'Trabajo con familias',
+		detalle:
+			'Estudio de los canales de comunicación, acompañamiento emocional y formación ofrecida a tutores y familias.'
+	}
+];
+
+const enfoques = [
+	{
+		titulo: 'Metodología mixta',
+		descripcion:
+			'Combinamos encuestas, registros administrativos y entrevistas en profundidad para obtener evidencias cuantitativas y narrativas.'
+	},
+	{
+		titulo: 'Territorialización',
+		descripcion:
+			'Cada isla cuenta con un nodo territorial que documenta singularidades, alianzas y barreras concretas.'
+	},
+	{
+		titulo: 'Participación',
+		descripcion:
+			'Alumnado, familias y profesorado participan en laboratorios de co-diseño que validan hipótesis y prototipos de apoyo.'
+	},
+	{
+		titulo: 'Calidad de vida',
+		descripcion:
+			'Se incorporan indicadores de bienestar emocional, social y comunitario, más allá de los logros académicos.'
+	}
+];
+
+const pageTitle = 'Proyecto | Inclusión educativa y calidad de vida';
+const pageDescription =
+	'Descripción del proyecto “Inclusión educativa y calidad de vida del alumnado con discapacidad: el efecto del COVID-19 en Canarias”.';
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<div class="relative isolate px-6 pb-20 pt-12">
+		<div
+			class="pointer-events-none absolute inset-0 -z-10 opacity-70 blur-3xl"
+			aria-hidden="true"
+			style="background: radial-gradient(circle at 15% 25%, rgba(180,222,255,0.7), transparent 45%), radial-gradient(circle at 80% 10%, rgba(214,236,255,0.8), transparent 40%);"
+		></div>
+
+		<article class="mx-auto max-w-5xl space-y-16">
+			<header class="space-y-6 text-center">
+				<p class="text-xs font-semibold uppercase tracking-[0.4em] text-sky-700">Proyecto</p>
+				<h1 class="text-4xl font-semibold text-stone-900">
+					Respuesta educativa inclusiva tras la pandemia
+				</h1>
+				<p class="mx-auto max-w-3xl text-base text-stone-700">
+					Investigamos cómo los centros educativos de Canarias reorganizaron sus recursos, metodologías y
+					alianzas para proteger la calidad de vida del alumnado con discapacidad en los distintos niveles
+					educativos. El proyecto combina análisis pedagógicos, emocionales, tecnológicos y comunitarios.
+				</p>
+			</header>
+
+			<section class="rounded-[32px] border border-sky-100 bg-white/80 p-8 shadow-xl shadow-sky-100/60">
+				<div class="grid gap-10 lg:grid-cols-[3fr,2fr]">
+					<div class="space-y-4 text-stone-700">
+						<h2 class="text-2xl font-semibold text-stone-900">Enfoque general</h2>
+						<p>
+							El diseño metodológico se apoya en fases sucesivas de diagnóstico, contraste y transferencia.
+							Se parte de una recogida de datos contextual, se contrastan hallazgos con actores clave y,
+							por último, se generan recomendaciones aplicables en centros y políticas públicas.
+						</p>
+						<p>
+							Cada fase incorpora perspectiva interseccional (género, entorno socioeconómico, diversidad de
+							necesidades) para garantizar que las propuestas resultantes se adapten a realidades muy
+							distintas dentro del archipiélago.
+						</p>
+					</div>
+					<div class="rounded-2xl border border-sky-100 bg-sky-50/70 p-6">
+						<h3 class="text-lg font-semibold text-stone-900">Colaboradores</h3>
+						<ul class="mt-4 space-y-3 text-sm text-stone-700">
+							<li>• Universidades públicas canarias.</li>
+							<li>• Consejería de Educación y servicios de orientación.</li>
+							<li>• Centros de Primaria, ESO, Bachillerato, FP y PFPA.</li>
+							<li>• Entidades sociales y asociaciones de familias.</li>
+						</ul>
+						<p class="mt-5 text-xs text-stone-500">
+							Financiado mediante convocatorias públicas de I+D+i y convenios con la administración
+							educativa canaria.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="space-y-8">
+				<h2 class="text-2xl font-semibold text-stone-900">Componentes de análisis</h2>
+				<div class="grid gap-6 md:grid-cols-2">
+					{componentes.map(({ titulo, detalle }) => (
+						<article class="rounded-3xl border border-sky-100 bg-white/70 p-6 shadow-md shadow-sky-50/80">
+							<h3 class="text-xl font-semibold text-stone-900">{titulo}</h3>
+							<p class="mt-3 text-sm text-stone-700">{detalle}</p>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<section class="space-y-8">
+				<h2 class="text-2xl font-semibold text-stone-900">Principios de trabajo</h2>
+				<div class="grid gap-6 md:grid-cols-2">
+					{enfoques.map(({ titulo, descripcion }) => (
+						<article class="rounded-3xl border border-sky-100 bg-gradient-to-br from-white via-sky-50 to-sky-100/70 p-6">
+							<p class="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">Enfoque</p>
+							<h3 class="mt-2 text-xl font-semibold text-stone-900">{titulo}</h3>
+							<p class="mt-3 text-sm text-stone-700">{descripcion}</p>
+						</article>
+					))}
+				</div>
+			</section>
+		</article>
+	</div>
+</Layout>

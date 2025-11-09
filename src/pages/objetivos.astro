@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const objetivos = [
+	{
+		titulo: 'Diagnóstico integral',
+		descripcion:
+			'Analizar el impacto del COVID-19 en la respuesta educativa por nivel, isla y tipología de apoyo.',
+		resultado: 'Mapa de necesidades y fortalezas que oriente la distribución de recursos.'
+	},
+	{
+		titulo: 'Calidad de vida y bienestar',
+		descripcion:
+			'Medir variables académicas, emocionales y sociales que configuran la experiencia del alumnado con discapacidad.',
+		resultado: 'Índice de calidad de vida que guíe decisiones institucionales.'
+	},
+	{
+		titulo: 'Innovación inclusiva',
+		descripcion:
+			'Identificar prácticas de éxito, barreras estructurales y tecnologías accesibles aplicadas durante y después de la pandemia.',
+		resultado: 'Catálogo de experiencias replicables y guías metodológicas.'
+	},
+	{
+		titulo: 'Transferencia activa',
+		descripcion:
+			'Transformar la evidencia en recursos, formación y asesoramiento para centros, administraciones y familias.',
+		resultado: 'Plan operativo con hitos, responsables y métricas.'
+	}
+];
+
+const fases = [
+	{
+		nombre: 'Observación',
+		items: ['Revisión documental', 'Encuestas a centros', 'Indicadores académicos y sociales']
+	},
+	{
+		nombre: 'Contrastación',
+		items: ['Entrevistas en profundidad', 'Laboratorios de co-diseño', 'Validación con expertos']
+	},
+	{
+		nombre: 'Acción',
+		items: ['Acompañamiento técnico', 'Publicaciones y guías', 'Seguimiento de implementación']
+	}
+];
+
+const pageTitle = 'Objetivos | Inclusión educativa y calidad de vida';
+const pageDescription =
+	'Objetivos principales del proyecto sobre inclusión educativa y calidad de vida del alumnado con discapacidad en Canarias.';
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+	<div class="relative isolate px-6 pb-20 pt-12">
+		<div
+			class="pointer-events-none absolute inset-0 -z-10 opacity-70 blur-3xl"
+			aria-hidden="true"
+			style="background: radial-gradient(circle at 20% 25%, rgba(186,227,255,0.8), transparent 45%), radial-gradient(circle at 70% 10%, rgba(206,232,255,0.6), transparent 40%);"
+		></div>
+
+		<article class="mx-auto max-w-5xl space-y-16">
+			<header class="space-y-6 text-center">
+				<p class="text-xs font-semibold uppercase tracking-[0.4em] text-sky-700">Objetivos</p>
+				<h1 class="text-4xl font-semibold text-stone-900">Preguntas que guían la investigación</h1>
+				<p class="mx-auto max-w-3xl text-base text-stone-700">
+					Los objetivos trazan una hoja de ruta que une diagnóstico, medición de la calidad de vida,
+					identificación de innovaciones y transferencia efectiva. Cada meta se concreta en resultados
+					observables y productos que acompañarán a la comunidad educativa.
+				</p>
+			</header>
+
+			<section class="grid gap-6 md:grid-cols-2">
+				{objetivos.map(({ titulo, descripcion, resultado }) => (
+					<article class="rounded-3xl border border-sky-100 bg-white/80 p-6 shadow-md shadow-sky-100/60">
+						<p class="text-xs font-semibold uppercase tracking-[0.35em] text-sky-700">Objetivo</p>
+						<h2 class="mt-2 text-2xl font-semibold text-stone-900">{titulo}</h2>
+						<p class="mt-3 text-sm text-stone-700">{descripcion}</p>
+						<div class="mt-4 rounded-2xl border border-sky-100 bg-sky-50/70 p-4">
+							<p class="text-xs font-semibold uppercase tracking-[0.25em] text-sky-700">
+								Resultado esperado
+							</p>
+							<p class="mt-1 text-sm text-stone-800">{resultado}</p>
+						</div>
+					</article>
+				))}
+			</section>
+
+			<section class="rounded-[32px] border border-sky-100 bg-gradient-to-br from-white via-sky-50 to-blue-50/80 p-8 shadow-xl shadow-sky-100/50">
+				<h2 class="text-2xl font-semibold text-stone-900">Fases operativas</h2>
+				<p class="mt-3 text-stone-700">
+					El avance del proyecto se estructura en tres momentos conectados. Cada fase produce entregables que
+					se comparten con la comunidad educativa para recibir retroalimentación y ajustar las acciones de
+					acuerdo con las necesidades reales.
+				</p>
+				<div class="mt-8 grid gap-6 md:grid-cols-3">
+					{fases.map(({ nombre, items }) => (
+						<article class="rounded-3xl border border-white/60 bg-white/70 p-5">
+							<p class="text-xs font-semibold uppercase tracking-[0.35em] text-sky-700">Fase</p>
+							<h3 class="mt-2 text-xl font-semibold text-stone-900">{nombre}</h3>
+							<ul class="mt-3 space-y-2 text-sm text-stone-700">
+								{items.map((item) => (
+									<li>• {item}</li>
+								))}
+							</ul>
+						</article>
+					))}
+				</div>
+			</section>
+		</article>
+	</div>
+</Layout>
