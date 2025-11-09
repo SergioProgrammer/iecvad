@@ -11,11 +11,15 @@ const nivelesEducativos = [
 	'PFPA'
 ];
 
+const totalInvestigadores = 13;
+const totalPublicaciones = 8;
+const totalObjetivos = 2;
+
 const indicadores = [
-	{ valor: '48+', etiqueta: 'Centros implicados' },
-	{ valor: '7', etiqueta: 'Islas y contextos de estudio' },
-	{ valor: '1.200', etiqueta: 'Estudiantes con discapacidad' },
-	{ valor: '2020-2025', etiqueta: 'Horizonte del proyecto' }
+	{ valor: `${nivelesEducativos.length}`, etiqueta: 'Niveles educativos analizados (Ed. Primaria a PFPA)' },
+	{ valor: `${totalObjetivos}`, etiqueta: 'Objetivos estratégicos del proyecto' },
+	{ valor: `${totalInvestigadores}`, etiqueta: 'Investigadoras e investigadores implicados' },
+	{ valor: `${totalPublicaciones}`, etiqueta: 'Publicaciones científico-técnicas con peer-review' }
 ];
 
 const secciones = [
@@ -63,7 +67,7 @@ const pageDescription =
 			style="background: radial-gradient(circle at 10% 30%, rgba(173,216,255,0.5), transparent 50%), radial-gradient(circle at 80% 20%, rgba(210,235,255,0.8), transparent 45%), radial-gradient(circle at 50% 90%, rgba(191,219,254,0.45), transparent 40%);"
 		></div>
 
-		<header class="flex min-h-screen flex-col px-4 pt-6 pb-10 sm:px-6 sm:pt-8 sm:pb-16">
+		<header class="flex min-h-screen flex-col safe-px pt-6 pb-10 sm:px-6 sm:pt-8 sm:pb-16">
 			<div class="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-6 sm:gap-8">
 				<div class="flex flex-1 items-center">
 					<section class="w-full rounded-[32px] border border-sky-100 bg-white/90 p-5 shadow-2xl shadow-sky-100/60 sm:p-8 lg:rounded-[40px] lg:p-12">
@@ -72,7 +76,7 @@ const pageDescription =
 								<p class="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-sky-700 sm:text-xs">
 									Proyecto de investigación
 								</p>
-								<h1 class="text-3xl font-semibold leading-tight text-stone-900 sm:text-4xl lg:text-5xl">
+								<h1 class="text-balance text-3xl font-semibold leading-tight text-stone-900 sm:text-4xl lg:text-5xl">
 									Inclusión educativa y calidad de vida del alumnado con discapacidad:
 									<span class="text-sky-700">el efecto del COVID-19 en Canarias</span>
 								</h1>
@@ -84,7 +88,7 @@ const pageDescription =
 										loading="lazy"
 									/>
 								</div>
-								<p class="max-w-3xl text-base text-stone-700 sm:text-lg">
+								<p class="text-pretty max-w-3xl text-base leading-relaxed text-stone-700 sm:text-lg">
 									Estudiamos cómo la pandemia transformó la respuesta educativa en todos los niveles —
 									Ed. Primaria, ESO, Bachillerato, Formación Profesional y Programas de Formación Profesional
 									Adaptada — para garantizar derechos, apoyos personalizados y bienestar integral.
@@ -145,8 +149,9 @@ const pageDescription =
 										</div>
 									))}
 								</div>
-								<p class="mt-6 text-xs text-stone-500">
-									Monitoreo continuo 2020-2025 con enfoque interseccional y participación comunitaria.
+								<p class="text-balance mt-6 text-xs text-stone-500">
+									Datos consolidados del Proyecto, Objetivos, Investigadores y Transferencia para reflejar el alcance real
+									del estudio.
 								</p>
 							</div>
 						</div>
@@ -155,16 +160,16 @@ const pageDescription =
 			</div>
 		</header>
 
-		<main class="px-4 pb-16 sm:px-6 sm:pb-20">
+		<main class="safe-px pb-16 sm:px-6 sm:pb-20">
 			<div class="mx-auto max-w-6xl space-y-10">
 				<section class="rounded-[32px] border border-sky-100 bg-white/85 p-6 shadow-xl shadow-sky-100/60 sm:p-8">
 					<div class="grid gap-6 lg:grid-cols-[2fr,3fr] lg:items-center">
 						<div class="space-y-4">
 							<p class="text-xs font-semibold uppercase tracking-[0.35em] text-sky-700">Resumen</p>
-							<h2 class="text-2xl font-semibold text-stone-900 sm:text-3xl">
+							<h2 class="text-balance text-2xl font-semibold text-stone-900 sm:text-3xl">
 								Una hoja de ruta para fortalecer la inclusión educativa
 							</h2>
-							<p class="text-sm text-stone-700 sm:text-base">
+							<p class="text-pretty text-sm leading-relaxed text-stone-700 sm:text-base">
 								Coordinamos universidades, administración y centros educativos para estudiar cómo se
 								garantiza la calidad de vida del alumnado con discapacidad después de la pandemia. Esta
 								landing presenta el proyecto y te guía a cada bloque temático.
@@ -192,7 +197,7 @@ const pageDescription =
 								Sección
 							</p>
 							<h3 class="mt-2 text-2xl font-semibold text-stone-900">{titulo}</h3>
-							<p class="mt-3 text-sm text-stone-700">{resumen}</p>
+							<p class="text-pretty break-anywhere mt-3 text-sm leading-relaxed text-stone-700">{resumen}</p>
 								<a
 									class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-sky-700 no-underline transition hover:gap-3"
 									href={enlace}
@@ -206,7 +211,7 @@ const pageDescription =
 			</div>
 		</main>
 
-		<section class="px-4 pb-16 sm:px-6">
+		<section class="safe-px pb-16 sm:px-6">
 			<div class="mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-sky-100 bg-white shadow-xl shadow-sky-100/80">
 				<img
 					src="/img_con.jpg"
@@ -216,10 +221,10 @@ const pageDescription =
 				/>
 				<div class="flex flex-col gap-4 px-4 py-6 md:flex-row md:items-center md:justify-between md:px-6 md:py-8">
 					<div class="text-left md:max-w-3xl">
-						<h2 class="text-xl font-semibold text-stone-900">
+						<h2 class="text-balance text-xl font-semibold text-stone-900">
 							Convocatoria de Ayudas a Proyectos de Investigación 2020
 						</h2>
-						<p class="mt-2 text-sm text-stone-700">
+						<p class="text-pretty mt-2 text-sm leading-relaxed text-stone-700">
 							A través del Programa de Ayudas a Proyectos de Iniciativas Sociales, la Fundación Bancaria “la Caixa” y la
 							Fundación CajaCanarias presentan la Convocatoria Ayudas a Proyectos de Investigación 2020.
 						</p>

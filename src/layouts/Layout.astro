@@ -20,46 +20,48 @@ const {
 	</head>
 	<body class="antialiased">
 		<div class="min-h-screen bg-transparent">
-			<header class="sticky top-0 z-50 px-4 pt-4 sm:px-6">
-				<nav
-					class="mx-auto flex max-w-6xl flex-col gap-4 rounded-full border border-sky-100 bg-white/95 px-4 py-4 shadow-sm shadow-sky-100/60 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:py-5"
-				>
-					<a class="flex items-center justify-center no-underline" href="/">
-						<img
-							src="/favicon.png"
-							alt="Logo IECVAD"
-							class="w-auto opacity-90 transition hover:opacity-100"
-							style="height: 2.5rem;"
-						/>
-					</a>
-					<div class="flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-stone-700 sm:justify-end">
-						<a class="no-underline transition hover:text-sky-700" href="/proyecto">Proyecto</a>
-						<a class="no-underline transition hover:text-sky-700" href="/objetivos">Objetivos</a>
-						<a class="no-underline transition hover:text-sky-700" href="/investigadores">Investigadores</a>
-						<a class="no-underline transition hover:text-sky-700" href="/transferencia">Transferencia</a>
-					</div>
-				</nav>
+			<header class="sticky top-0 z-50 pt-3 sm:pt-4">
+				<div class="safe-px">
+					<nav
+						class="mx-auto flex w-full max-w-6xl flex-col gap-4 rounded-[28px] border border-sky-100/80 bg-white/95 px-4 py-4 shadow-sm shadow-sky-100/60 backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:py-5"
+					>
+						<a class="flex items-center justify-center no-underline" href="/">
+							<img
+								src="/favicon.png"
+								alt="Logo IECVAD"
+								class="w-auto opacity-90 transition hover:opacity-100"
+								style="height: 2.5rem;"
+							/>
+						</a>
+						<div class="flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-stone-700 sm:justify-end">
+							<a class="no-underline transition hover:text-sky-700" href="/proyecto">Proyecto</a>
+							<a class="no-underline transition hover:text-sky-700" href="/objetivos">Objetivos</a>
+							<a class="no-underline transition hover:text-sky-700" href="/investigadores">Investigadores</a>
+							<a class="no-underline transition hover:text-sky-700" href="/transferencia">Transferencia</a>
+						</div>
+					</nav>
+				</div>
 			</header>
-			<div class="pt-8 sm:pt-10">
+			<div class="pt-3 sm:pt-5">
 				<slot />
 			</div>
 		</div>
-		<footer class="mt-8 bg-white/90 px-4 py-6 text-sm text-slate-700 shadow-inner shadow-slate-200 sm:px-8">
+		<footer class="mt-8 bg-white/90 safe-px py-6 text-sm text-slate-700 shadow-inner shadow-slate-200 sm:px-8">
 			<div class="mx-auto flex max-w-6xl flex-col gap-4">
-				<p class="text-xs leading-relaxed text-slate-600">
+				<p class="text-balance text-xs leading-relaxed text-slate-600 break-anywhere">
 					“INCLUSIÓN EDUCATIVA Y CALIDAD DE VIDA DEL ALUMNADO CON DISCAPACIDAD: EL EFECTO DEL COVID-19 EN LA RESPUESTA EDUCATIVA AL
 					ALUMNADO DE ED.PRIMARIA, ED. SECUNDARIA OBLIGATORIA, BACHILLERATO, CICLOS FORMATIVOS DE FP BÁSICA, PRIMARIA, ED. SECUNDARIA
 					OBLIGATORIA, BACHILLERATO, CICLOS FORMATIVOS DE FP BÁSICA,PRIMARIA, ED. SECUNDARIA OBLIGATORIA, BACHILLERATO, CICLOS
 					FORMATIVOS DE FP BÁSICA,CCFF DE GRADO MEDIO DE FP (CF2Y CD2), CCFF DE GRADO SUPERIOR (CF3, CD3) Y PROGRAMAS DEFORMACIÓN
 					PROFESIONAL ADAPTADA (PFPA) DE CANARIAS.”
 				</p>
-				<p class="text-sm text-slate-700">
+				<p class="text-balance text-sm text-slate-700 break-anywhere">
 					Contacto:
 					<a class="font-semibold text-sky-700 no-underline" href="mailto:mcrojime@ull.edu.es">mcrojime@ull.edu.es</a>
 				</p>
-				<div class="text-xs text-slate-600">
-					<p>Código ético del CEIBA2021-0462</p>
-					<p>2020EDU24</p>
+				<div class="space-y-1 text-xs text-slate-600 break-anywhere">
+					<p class="text-balance">Código ético del CEIBA2021-0462</p>
+					<p class="text-balance">2020EDU24</p>
 				</div>
 			</div>
 		</footer>

@@ -1,86 +1,236 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const transferencias = [
+const publicaciones = [
 	{
-		titulo: 'Guía para equipos directivos',
-		descripcion:
-			'Protocolos de respuesta ante emergencias sanitarias, planes de apoyo personalizado y recomendaciones de accesibilidad universal.',
-		formato: 'Manual interactivo, fichas descargables y sesiones formativas.'
+		numero: '1',
+		referencia:
+			'Rodríguez-Jiménez, M. C., Jorge, D. P., González-Contreras, A. I. & Zabala, E. L. (2023). Development and validation of EDU-COV-NEE-NEAE questionnaire to measure educational response, ICT usage and impact of COVID-19 pandemic on students with special educational needs. Heliyon, 9(9): e19231. DOI: 10.1016/j.heliyon.2023.e19231',
+		img: '/6.png'
 	},
 	{
-		titulo: 'Observatorio de inclusión post-pandemia',
-		descripcion:
-			'Panel con indicadores de seguimiento, relatos de buenas prácticas y recursos abiertos para docentes y familias.',
-		formato: 'Plataforma digital con boletines semestrales y alertas temáticas.'
+		numero: '2',
+		referencia:
+			'Rodríguez-Jiménez, M.C., González Weiskorn, J., Puerta Araña, I., González-Afonso, M.C. (2024). Explorando la realidad educativa: percepciones, actitudes y formación del profesorado de secundaria en canarias hacia la inclusión y las TIC. En Educar para la Felicidad (pp.234-241). 978-84-1070-785-6',
+		img: '/7.png'
 	},
 	{
-		titulo: 'Laboratorios de co-diseño',
-		descripcion:
-			'Espacios colaborativos donde comunidades educativas prototipan apoyos personalizados, metodologías flexibles y tecnologías accesibles.',
-		formato: 'Talleres presenciales/virtuales y repositorio de prototipos.'
+		numero: '3',
+		referencia:
+			'Pérez-Jorge, D. (2023). Las competencias en tecnologías de la información y la comunicación del profesorado de México, en la mejora de la respuesta educativa al alumnado con NEE y NEAE. In La escuela promotora de derechos, buen trato y participación.: Revisiones, estudios y experiencias (pp. 980-988). Octaedro. 978-84-19690-00-5',
+		img: '/8.png'
+	},
+	{
+		numero: '4',
+		referencia:
+			'Pérez-Jorge, D., González-Herrera, A.I., Alonso-Rodríguez, I., y Rodríguez-Jiménez, M.d.C. (2024). Challenges and Opportunities in Inclusive Education with ICT: Teachers’ Perspectives in the Canary Islands during the COVID-19 Pandemic. Education Sciencies, 14, 283. https://doi.org/10.3390/educsci14030283',
+		img: '/9.png'
+	},
+	{
+		numero: '5',
+		referencia:
+			'González-Afonso, M.C., Becerra Brito, M.B., Puerta Araña, I., y Rodríguez-Jiménez, M.C. (2024). Barreras para la inclusión educativa del profesorado de secundaria: ¿actitudes o formación?. En Educar para la Felicidad (pp. 242-250). Dykinson EBOOK. 978-84-1070-785-6 https://www.dykinson.com/media/pdf/indice978-84-1070-785-6.pdf',
+		img: '/10.png'
+	},
+	{
+		numero: '6',
+		referencia:
+			'González-Herrera, A. I., Pérez-Jorge, D., Díaz-Fuentes, Y., Rodríguez-Jiménez, M. D. C., & Ariño-Mateo, E. (2021). Dealing with stress and intervention models in families with children with autism spectrum disorder. Humanities and Social Sciences Communications, 8(1), 1-6. https://doi.org/10.1057/s41599-021-00988-3',
+		img: '/11.png'
+	},
+	{
+		numero: '7',
+		referencia:
+			'Rodríguez-Jiménez, M.d.C., Pérez-Jorge, D., Puerta-Araña, I., Ariño-Mateo, E. (2022). Quality of Life in Deafblind People and Its Effect on the Processes of Educational Adaptation and Social Inclusion in Canary Islands. Education Science, 12(7), 490. https://doi.org/10.3390/educsci12070490',
+		img: null
+	},
+	{
+		numero: '8',
+		referencia:
+			'Rodríguez-Jiménez, M. D. C., Olmo, R., Puerta-Araña, I. & González-Afonso, M. C. (2023). Calidad de vida de niños y niñas con trastorno del espectro del autismo (TEA) en el nuevo panorama Postcovid-19: Una mirada contrastante entre la autopercepción infantil y la percepción familiar en la Comunidad Autónoma de Canarias. En La escuela promotora de derechos, buen trato y participación.: Revisiones, estudios y experiencias (pp. 650-658). Octaedro. ISBN: 978-84-19690-00-5. http://doi.org/10.36006/90016-1.',
+		img: null
+	},
+	{
+		numero: '9',
+		referencia:
+			'Araña, I., González-Herrera, A.I., González-Afonso, M.C. (2024). Analysis of Quality of Life of Autistic Students on the Canary Islands during the COVID-19 Pandemic and the Educational Response Offered. Education Science,14,111. https://doi.org/10.3390/educsci14010111',
+		img: null
 	}
 ];
 
-const hitos = [
-	{ periodo: '2023-2024', detalle: 'Pilotaje de instrumentos y publicación del primer informe insular.' },
-	{ periodo: '2024-2025', detalle: 'Lanzamiento del observatorio y despliegue de laboratorios territoriales.' },
-	{ periodo: '2025', detalle: 'Entrega de recomendaciones normativas y cierre del plan de acompañamiento.' }
+const congresos = [
+	{
+		titulo: 'V congreso mundial sobre infancia y adolescencia. Organizado por el Consejo Independiente de Protección de la Infancia (Sociedad Internacional, Científica y Profesional) con la colaboración del Laboratorio Internacional de Promoción de Buen Trato y Participación Infantil, del Grupo de Investigación GEXTHE (Universidad de Extremadura) y del Grupo de Investigación IDEO (Universidad de Jaén), en el marco del Proyecto Internacional Gira con la Infancia 2023',
+		comunicacion: 'Tipo de comunicación: Calidad de vida de niños y niñas con trastorno del espectro del autismo (TEA) en el nuevo panorama post-covid-19: una mirada contrastante entre la autopercepción infantil y la percepción familiar en la comunidad autónoma de canaria.',
+		autores: 'Autores: Mª del Carmen Rodríguez-Jiménez, Raquel del Olmo Ortiz, Irene Puerta Araña, Miriam González-Afonso.'
+	},
+	{
+		titulo: 'll Congreso Internacional de Inclusión y Mejora Educativa',
+		comunicacion: 'Tipo de comunicación: El Efecto del COVID-19 en la Respuesta Educativa al Alumnado con Discapacidad en Canarias.',
+		autores: 'Autores: María del Carmen Rodríguez-Jiménez, Miriam Catalina González-Afonso, Ana Isabel González-Herrera, David Pérez-Jorge.'
+	},
+	{
+		titulo: 'El Papel de la Tecnología en el Apoyo del Aprendizaje Inclusivo: Construyendo la Nueva Escuela Post-Pandemia',
+		comunicacion: 'Tipo de comunicación: ll Congreso Internacional de Inclusión y Mejora Educativa.',
+		autores: 'Autores: Miriam Catalina González-Afonso, Ana Isabel González-Herrera, Irene Puerta-Araña.'
+	},
+	{
+		titulo: 'Percepción del Alumnado con Discapacidad Auditiva ante la Respuesta Educativa y Uso de las TIC Durante el COVID-19',
+		comunicacion: 'Tipo de comunicación: II Congreso Internacional de Inclusión y Mejora Educativa',
+		autores: 'Autores: María del Carmen Rodríguez-Jiménez e Irene Puerta-Araña'
+	},
+	{
+		titulo: 'VI Congreso Mundial con Infancia y Adolescencia. Educar para la felicidad con motivo XXXV aniversario de la Convención sobre los derechos del niño. 20 al 29 de noviembre de 2024. Cáceres-España',
+		comunicacion: 'Tipo de comunicación: Actitudes y prácticas del profesorado ante la inclusión y el uso del as TIC',
+		autores: 'Autores: Jaqueline González, Miriam C. González, Irene Puerta-Araña y Mª Carmen Rodríguez-Jiménez'
+	},
+		{
+			titulo: 'VI Congreso Mundial con Infancia y Adolescencia. Educar para la felicidad con motivo XXXV aniversario de la Convención sobre los derechos del niño. 20 al 29 de noviembre de 2024. Cáceres-España',
+			comunicacion: 'Tipo de comunicación: Evaluación de actitudes del profesorado hacia el alumnado de secundaria con discapacidad y estrategias utilizadas en el aula para su inclusión',
+			autores: 'Autores: Melina B. Becerra, Miriam C. González, Irene Puerta-Araña y Mª Carmen Rodríguez-Jiménez'
+		}
+	];
+
+const otrasPublicaciones = [
+	{
+		titulo: 'Máster Universitario en Intervención Logopédica. Universidad Complutense de Madrid',
+		comunicacion: 'Tipo de comunicación: Conferencia-abril 2024. Estrategias comunicativas con el alumnado con NEAE y NEE',
+		autores: 'Autores: María del Carmen Rodríguez Jiménez'
+	},
+	{
+		titulo: 'Feria de Investigación. Facultad de Psicología y Logopedia. Universidad de La Laguna',
+		comunicacion: 'Tipo de comunicación: Póster 22 de abril de 2024',
+		autores: 'Autores: Investigadores del proyecto'
+	}
+];
+
+const jornadas = [
+	{
+		titulo: 'I JORNADAS SOBRE BIENESTAR EMOCIONAL Y ESTRATEGIAS DE INTERVENCIÓN Y ASESORAMIENTO EN ALUMNADO CON NEAE Y NEE: LOS EFECTOS DE LA PANDEMIA EN CANARIAS',
+		img: '/12.webp'
+	}
+];
+
+const tesis = [
+	{
+		titulo:
+			'Respuesta Educativa e Inclusión durante la Pandemia por COVID-19. Evaluación e Intervención en Necesidades Educativas Especiales y de Apoyo Educativo mediante Tecnologías de la Información y la Comunicación'
+	}
 ];
 
 const pageTitle = 'Transferencia | Inclusión educativa y calidad de vida';
 const pageDescription =
-	'Plan de transferencia del proyecto sobre inclusión educativa y calidad de vida del alumnado con discapacidad en Canarias.';
+	'Resultados y acciones de transferencia del proyecto: publicaciones, patentes, participaciones en congresos y divulgación científica.';
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
-	<div class="relative isolate px-6 pb-20 pt-12">
+	<div class="relative isolate safe-px pb-20 pt-12 sm:px-6">
 		<div
 			class="pointer-events-none absolute inset-0 -z-10 opacity-70 blur-3xl"
 			aria-hidden="true"
 			style="background: radial-gradient(circle at 10% 20%, rgba(189,229,255,0.9), transparent 50%), radial-gradient(circle at 80% 10%, rgba(211,235,255,0.6), transparent 40%);"
 		></div>
 
-		<article class="mx-auto max-w-5xl space-y-16">
-			<header class="space-y-4 rounded-[32px] border border-sky-100 bg-white/85 p-6 text-center shadow-lg shadow-sky-100/60 sm:p-8">
-				<p class="text-xs font-semibold uppercase tracking-[0.4em] text-sky-700">Transferencia</p>
-				<h1 class="text-4xl font-semibold text-stone-900">De la evidencia a la acción</h1>
-				<p class="mx-auto max-w-3xl text-base text-stone-700">
-					La investigación se traduce en productos útiles para centros, administraciones y familias. Cada pieza
-					incluye instrucciones de uso, acompañamiento técnico y mecanismos de evaluación de impacto.
-				</p>
+			<article class="mx-auto max-w-5xl space-y-16">
+				<header class="rounded-[32px] border border-sky-100 bg-white/85 p-6 text-center shadow-lg shadow-sky-100/60 sm:p-8">
+					<p class="text-xs font-semibold uppercase tracking-[0.4em] text-sky-700">Transferencia</p>
+					<h1 class="text-balance text-4xl font-semibold text-stone-900">Publicaciones, difusión y transferencia</h1>
+					<p class="text-pretty mx-auto max-w-3xl text-base leading-relaxed text-stone-700">
+						El proyecto se materializa en artículos científicos, capítulos de libro, congresos, jornadas y acciones de
+						divulgación que acercan la evidencia a la comunidad educativa.
+					</p>
 			</header>
 
-			<section class="grid gap-6 md:grid-cols-3">
-				{transferencias.map(({ titulo, descripcion, formato }) => (
-					<article class="rounded-3xl border border-sky-100 bg-white/80 p-6 shadow-md shadow-sky-100/60">
-						<h2 class="text-xl font-semibold text-stone-900">{titulo}</h2>
-						<p class="mt-3 text-sm text-stone-700">{descripcion}</p>
-						<div class="mt-4 rounded-2xl border border-sky-100 bg-sky-50/70 p-4 text-sm text-stone-800">
-							<strong class="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700"
-								>Formato</strong
-							>
-							<p class="mt-2">{formato}</p>
-						</div>
-					</article>
-				))}
-			</section>
+				<section class="space-y-6">
+					<h2 class="text-balance text-2xl font-semibold text-stone-900">
+						Publicaciones científico-técnicas (con peer-review) derivadas del proyecto y patentes
+					</h2>
+					<div class="space-y-4">
+						{publicaciones.map(({ numero, referencia, img }) => (
+							<article class="rounded-2xl border border-sky-100 bg-white/85 p-4 shadow-inner shadow-sky-100/60">
+								<div class="flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
+									{img && (
+										<div class="order-2 flex justify-center md:order-1 md:w-auto md:justify-start">
+											<img
+												src={img}
+												alt={`Icono de la publicación ${numero}`}
+												class="h-48 w-48 rounded-2xl border border-sky-100 object-cover shadow-sm shadow-sky-100/60 md:h-60 md:w-60"
+												loading="lazy"
+											/>
+										</div>
+									)}
+									<div class="order-1 space-y-2 text-left md:order-2 md:flex-1">
+										<p class="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
+											Publicación {numero}
+										</p>
+										<p class="text-pretty break-anywhere text-sm leading-relaxed text-stone-700">{referencia}</p>
+									</div>
+								</div>
+							</article>
+						))}
+					</div>
+				</section>
 
-			<section class="rounded-[32px] border border-sky-100 bg-gradient-to-br from-white via-sky-50 to-blue-50/80 p-8 shadow-xl shadow-sky-100/60">
-				<h2 class="text-2xl font-semibold text-stone-900">Hitos y acompañamiento</h2>
-				<p class="mt-3 text-stone-700">
-					Cada producto se lanza con sesiones demostrativas, materiales de autoformación y seguimiento remoto.
-					Los hitos a continuación sirven como guía para centros y entidades que deseen sumarse al itinerario.
-				</p>
-				<div class="mt-8 space-y-4">
-					{hitos.map(({ periodo, detalle }) => (
-						<div class="rounded-3xl border border-white/60 bg-white/80 p-5">
-							<p class="text-xs font-semibold uppercase tracking-[0.35em] text-sky-700">{periodo}</p>
-							<p class="mt-2 text-sm text-stone-800">{detalle}</p>
-						</div>
-					))}
-				</div>
-			</section>
-		</article>
-	</div>
-</Layout>
+				<section class="space-y-6">
+					<h2 class="text-balance text-2xl font-semibold text-stone-900">
+						Asistencia a Congresos, Conferencias o Workshops relacionados con el proyecto
+					</h2>
+					<div class="space-y-4">
+						{congresos.map(({ titulo, comunicacion, autores }) => (
+							<article class="rounded-2xl border border-sky-100 bg-white/85 p-4 shadow-inner shadow-sky-100/60">
+								<h3 class="text-balance text-lg font-semibold text-stone-900">{titulo}</h3>
+								<p class="text-pretty mt-1 text-sm leading-relaxed text-stone-700">{comunicacion}</p>
+								<p class="text-pretty break-anywhere text-sm leading-relaxed text-stone-600">{autores}</p>
+							</article>
+						))}
+					</div>
+				</section>
+
+				<section class="space-y-6">
+					<h2 class="text-balance text-2xl font-semibold text-stone-900">
+						Otras publicaciones derivadas de colaboraciones mantenidas durante la ejecución del proyecto y que pudieran
+						ser relevantes para el mismo, así como artículos de divulgación, libros, conferencias
+					</h2>
+					<div class="space-y-4">
+						{otrasPublicaciones.map(({ titulo, comunicacion, autores }) => (
+							<article class="rounded-2xl border border-sky-100 bg-white/85 p-4 shadow-inner shadow-sky-100/60">
+								<h3 class="text-balance text-lg font-semibold text-stone-900">{titulo}</h3>
+								<p class="text-pretty mt-2 text-sm leading-relaxed text-stone-700">{comunicacion}</p>
+								<p class="text-pretty break-anywhere mt-2 text-sm leading-relaxed text-stone-600">{autores}</p>
+							</article>
+						))}
+					</div>
+				</section>
+
+				<section class="space-y-6">
+					<h2 class="text-balance text-2xl font-semibold text-stone-900">Organización de jornadas</h2>
+					<div class="space-y-4">
+						{jornadas.map(({ titulo, descripcion, img }) => (
+							<article class="rounded-2xl border border-sky-100 bg-white/85 p-4 shadow-inner shadow-sky-100/60">
+								<h3 class="text-balance text-lg font-semibold text-stone-900">{titulo}</h3>
+								{descripcion && (
+									<p class="text-pretty mt-2 text-sm leading-relaxed text-stone-700">{descripcion}</p>
+								)}
+								{img && (
+									<img
+										src={img}
+										alt={`Imagen de ${titulo}`}
+										class="mt-4 w-full rounded-2xl border border-sky-100 bg-white object-contain shadow-sm shadow-sky-100/60 md:max-h-[36rem]"
+										loading="lazy"
+									/>
+								)}
+							</article>
+						))}
+					</div>
+				</section>
+
+				<section class="space-y-6">
+					<h2 class="text-balance text-2xl font-semibold text-stone-900">Tesis Doctoral</h2>
+					<div class="space-y-4">
+						{tesis.map(({ titulo }) => (
+							<article class="rounded-2xl border border-sky-100 bg-white/85 p-4 shadow-inner shadow-sky-100/60">
+								<p class="text-pretty break-anywhere text-sm leading-relaxed text-stone-700">{titulo}</p>
+							</article>
+						))}
+					</div>
+				</section>
