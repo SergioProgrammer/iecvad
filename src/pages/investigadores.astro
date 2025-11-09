@@ -1,30 +1,102 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const equipoDestacado = [
+	{
+		nombre: 'María del Carmen Rodríguez Jiménez',
+		rol: 'Investigadora Principal (IP)',
+		institucion: 'Departamento de Didáctica e Investigación Educativa · Universidad de La Laguna',
+		img: '/maricarmen.jpeg',
+		resumen:
+			'Profesora Contratada Doctora. Licenciada en Ciencias de la Educación y diplomada en E.G.B. por la UCM, experta en Logoterapia Infantil y directora académica del primer Máster/Experto Universitario en Interpretación de Lengua de Signos (ULL). Fundadora de ACAILSE, asesora en discapacidad auditiva y sordoceguera y miembro del GIED. Sus líneas de trabajo abarcan intervención logopédica, atención a la diversidad, atención temprana y familia. Consulta sus trabajos en el Portal Ciencia ULL.'
+	},
+	{
+		nombre: 'David Pérez Jorge',
+		rol: 'Co-Investigador Principal',
+		institucion: 'Departamento de Didáctica e Investigación Educativa · Universidad de La Laguna',
+		img: '/david.png',
+		resumen:
+			'Profesor Contratado Doctor, licenciado en Ciencias de la Educación (ULL) y doctor en Filosofía y Ciencias de la Educación. Fue director del Máster en Intervención Psicopedagógica (2015-2021) y miembro de los grupos GIED y Diversidad, Salud y Educación. Centra su investigación en educación, diversidad, dificultades de aprendizaje y convivencia. Consulta sus trabajos en el Portal Ciencia ULL.'
+	}
+];
+
 const investigadores = [
 	{
-		nombre: 'Dra. Ana Pérez Martín',
-		rol: 'Investigadora Principal',
-		institucion: 'Universidad de La Laguna',
-		enfoque: 'Políticas públicas, evaluación de programas inclusivos y liderazgo femenino en educación.'
+		nombre: 'Miriam Catalina González Afonso',
+		institucion: 'Departamento de Didáctica e Investigación Educativa · ULL',
+		img: '/miriam.png',
+		enfoque:
+			'Profesora Contratada Doctora, licenciada en Psicología y Psicopedagogía, doctora en Didáctica y Organización Escolar. Especialista en intervención orientadora, asesoramiento psicopedagógico, educación intergeneracional y diversidad. Consulta sus trabajos en el Portal Ciencia ULL.'
 	},
 	{
-		nombre: 'Dr. Sergio Hernández Delgado',
-		rol: 'Co-investigador',
-		institucion: 'Universidad de Las Palmas de Gran Canaria',
-		enfoque: 'Calidad de vida, salud mental y discapacidad en contextos educativos y comunitarios.'
+		nombre: 'Irene Puerta Araña',
+		institucion: 'Audioprotesista y logopeda',
+		img: '/irene.png',
+		enfoque:
+			'Graduada en Logopedia (ULL), Máster en Trastornos de la Comunicación por la Universidad de Salamanca y técnica en Audiología Protésica. Ha ejercido como logopeda y actualmente trabaja como audioprotesista. Investigadora en intervención logopédica y familiar. Consulta sus trabajos en Scopus.'
 	},
 	{
-		nombre: 'Dra. Laura Cabrera Gómez',
-		rol: 'Responsable de metodología',
-		institucion: 'Consejería de Educación, Gobierno de Canarias',
-		enfoque: 'Análisis de datos longitudinales, evaluación de impacto y mejora normativa.'
+		nombre: 'Eneko Larumbe Zabala',
+		institucion: 'Investigador senior en psicología',
+		img: '/eneko.png',
+		enfoque:
+			'Doctor por la UNED y licenciado por la ULL. Experiencia internacional como profesor y asesor científico en España, México y EE. UU. Bioestadístico en salud pública y psicólogo del deporte con más de 25 años de trayectoria. Consulta sus trabajos en ResearchGate y ORCID.'
 	},
 	{
-		nombre: 'Equipo PFPA y FP',
-		rol: 'Nodos territoriales',
-		institucion: 'Centros colaboradores de las siete islas',
-		enfoque: 'Implementación de estrategias inclusivas, acompañamiento docente y tutoría personalizada.'
+		nombre: 'Alexandra Tisaire De Dios',
+		institucion: 'Hospital Universitario de la Princesa · Universidad Complutense de Madrid',
+		img: '/alexandra.png',
+		enfoque:
+			'Logopeda hospitalaria y profesora asociada en la UCM. Docente en grados y másteres de Logopedia. Especialista en audiología, neuropsicología y disfagias. Consulta sus trabajos en el Portal de la UCM.'
+	},
+	{
+		nombre: 'Isabel Alonso Rodríguez',
+		institucion: 'Departamento de Comunicación y Trabajo Social · ULL',
+		img: '/isabel.png',
+		enfoque:
+			'Profesora Contratada Laboral Interina. Ha sido orientadora educativa y educadora social. Investiga en educación social, justicia restaurativa y diversidad. Consulta sus trabajos en el Portal Ciencia ULL.'
+	},
+	{
+		nombre: 'José Luis Ramos Sánchez',
+		institucion: 'Universidad de Extremadura',
+		img: '/jose.png',
+		enfoque:
+			'Profesor asociado (2001-2019) en Métodos de Investigación y Diagnóstico en Educación. Doctor en Pedagogía, orientador educativo y miembro del GRIE. Especialista en evaluación del lenguaje, conciencia fonológica y dificultades de lectura y escritura. Consulta sus trabajos en ORCID.'
+	},
+	{
+		nombre: 'Ana Isabel González Contreras',
+		institucion: 'Facultad de Formación del Profesorado · Universidad de Extremadura',
+		img: '/ana.png',
+		enfoque:
+			'Profesora Ayudante Doctora en Psicología y Antropología. Investiga convivencia escolar, dificultades de aprendizaje y factores emocionales en infancia y adolescencia. Consulta sus trabajos en Google Scholar.'
+	},
+	{
+		nombre: 'Eva Ariño Mateo',
+		institucion: 'IDOCAL · Universitat de València',
+		img: '/eva.png',
+		enfoque:
+			'Doctora en Psicología (ULL) e investigadora en Psicología Organizacional y Social. Experta en RR. HH., gestión de proyectos y formación con experiencia internacional. Consulta sus trabajos en el Portal de Producción Científica UV.'
+	},
+	{
+		nombre: 'Ana Isabel González Herrera',
+		institucion: 'Departamento de Didáctica e Investigación Educativa · ULL',
+		img: '/ana_isabel.png',
+		enfoque:
+			'Profesora Contratada Doctora, diplomada en Primaria y doctora en Filosofía y Ciencias de la Educación. Se enfoca en educación inclusiva, orientación educativa, acción tutorial, psicomotricidad y aprendizaje-servicio. Consulta sus trabajos en el Portal Ciencia ULL.'
+	},
+	{
+		nombre: 'Antonio Jesús Guijarro Expósito',
+		institucion: 'Departamento de Didáctica e Investigación Educativa · ULL',
+		img: '/antonio.png',
+		enfoque:
+			'Profesor asociado y pedagogo en la Unidad Orgánica de Infancia y Familia del Cabildo de Tenerife. Especialista en métodos didácticos y atención a la diversidad. Consulta sus trabajos en el Portal Ciencia ULL.'
+	},
+	{
+		nombre: 'María Eulalia Díaz García',
+		institucion: 'Departamento de Psicología Evolutiva y de la Educación · ULL',
+		img: '/eulalia.png',
+		enfoque:
+			'Profesora contratada laboral interina y logopeda en la unidad de voz del Hospital Universitario de Canarias. Su trabajo se centra en logopedia clínica y atención educativa.'
 	}
 ];
 
@@ -50,7 +122,7 @@ const pageDescription =
 		></div>
 
 		<article class="mx-auto max-w-5xl space-y-16">
-			<header class="space-y-6 text-center">
+			<header class="space-y-4 rounded-[32px] border border-sky-100 bg-white/85 p-6 text-center shadow-lg shadow-sky-100/60 sm:p-8">
 				<p class="text-xs font-semibold uppercase tracking-[0.4em] text-sky-700">
 					Investigadores
 				</p>
@@ -63,14 +135,55 @@ const pageDescription =
 			</header>
 
 			<section class="grid gap-6 md:grid-cols-2">
-				{investigadores.map(({ nombre, rol, institucion, enfoque }) => (
-					<article class="rounded-3xl border border-sky-100 bg-white/80 p-6 shadow-md shadow-sky-100/60">
-						<p class="text-xs font-semibold uppercase tracking-[0.35em] text-sky-700">{rol}</p>
-						<h2 class="mt-2 text-2xl font-semibold text-stone-900">{nombre}</h2>
-						<p class="text-sm text-stone-600">{institucion}</p>
-						<p class="mt-4 text-sm text-stone-700">{enfoque}</p>
+				{equipoDestacado.map(({ nombre, rol, institucion, resumen, img }) => (
+					<article class="rounded-3xl border border-sky-100 bg-white p-6 shadow-md shadow-sky-100/60">
+						<div class="flex flex-col gap-4 md:flex-row md:items-stretch md:gap-6">
+							{img && (
+								<div class="order-2 flex justify-center md:order-1 md:w-1/3 md:justify-start">
+									<img
+										src={img}
+										alt={`Retrato de ${nombre}`}
+										class="h-24 w-24 rounded-full border border-sky-100 object-cover shadow-sm shadow-sky-100/80 md:h-auto md:w-auto md:max-h-[260px]"
+										loading="lazy"
+									/>
+								</div>
+							)}
+							<div class="order-1 space-y-3 text-left md:order-2 md:flex-1">
+								<p class="text-xs font-semibold uppercase tracking-[0.35em] text-sky-700">{rol}</p>
+								<h2 class="text-2xl font-semibold text-stone-900">{nombre}</h2>
+								<p class="text-sm font-medium text-stone-600">{institucion}</p>
+								<p class="text-sm text-stone-700">{resumen}</p>
+							</div>
+						</div>
 					</article>
 				))}
+			</section>
+
+			<section class="space-y-6">
+				<h2 class="text-2xl font-semibold text-stone-900">Equipo investigador</h2>
+				<div class="grid gap-6 md:grid-cols-2">
+					{investigadores.map(({ nombre, institucion, enfoque, img }) => (
+						<article class="rounded-3xl border border-sky-100 bg-white/80 p-6 shadow-md shadow-sky-100/60">
+							<div class="flex flex-col gap-3 md:flex-row md:items-stretch md:gap-4">
+								{img && (
+									<div class="order-2 flex justify-center md:order-1 md:w-1/3 md:justify-start">
+										<img
+											src={img}
+											alt={`Retrato de ${nombre}`}
+											class="h-16 w-16 rounded-full border border-sky-100 object-cover shadow-sm shadow-sky-100/80 md:h-full md:max-h-[220px] md:w-auto"
+											loading="lazy"
+										/>
+									</div>
+								)}
+								<div class="order-1 space-y-2 md:order-2 md:flex-1">
+									<h3 class="text-xl font-semibold text-stone-900">{nombre}</h3>
+									<p class="text-sm text-stone-600">{institucion}</p>
+									<p class="text-sm text-stone-700">{enfoque}</p>
+								</div>
+							</div>
+						</article>
+					))}
+				</div>
 			</section>
 
 			<section class="rounded-[32px] border border-sky-100 bg-gradient-to-br from-white via-sky-50 to-sky-100/70 p-8 shadow-xl shadow-sky-100/50">

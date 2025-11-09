@@ -65,25 +65,6 @@ const pageDescription =
 
 		<header class="flex min-h-screen flex-col px-4 pt-6 pb-10 sm:px-6 sm:pt-8 sm:pb-16">
 			<div class="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-6 sm:gap-8">
-				<nav
-					class="flex flex-col gap-4 rounded-full border border-sky-100 bg-white/95 px-4 py-4 shadow-sm shadow-sky-100/60 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:py-5"
-				>
-					<a class="flex items-center justify-center no-underline" href="/">
-						<img
-							src="/favicon.png"
-							alt="Logo IECVAD"
-							class="w-auto opacity-90 transition hover:opacity-100"
-							style="height: 2.5rem;"
-						/>
-					</a>
-					<div class="flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-stone-700 sm:justify-end">
-						<a class="no-underline transition hover:text-sky-700" href="/proyecto">Proyecto</a>
-						<a class="no-underline transition hover:text-sky-700" href="/objetivos">Objetivos</a>
-						<a class="no-underline transition hover:text-sky-700" href="/investigadores">Investigadores</a>
-						<a class="no-underline transition hover:text-sky-700" href="/transferencia">Transferencia</a>
-					</div>
-				</nav>
-
 				<div class="flex flex-1 items-center">
 					<section class="w-full rounded-[32px] border border-sky-100 bg-white/90 p-5 shadow-2xl shadow-sky-100/60 sm:p-8 lg:rounded-[40px] lg:p-12">
 						<div class="grid gap-10 lg:grid-cols-[3fr,2fr] lg:items-center">
@@ -95,6 +76,14 @@ const pageDescription =
 									Inclusión educativa y calidad de vida del alumnado con discapacidad:
 									<span class="text-sky-700">el efecto del COVID-19 en Canarias</span>
 								</h1>
+								<div class="overflow-hidden rounded-3xl border border-sky-100 bg-white/80">
+									<img
+										src="/banner-1.webp"
+										alt="Banner introductorio del proyecto IECVAD"
+										class="h-full w-full object-cover"
+										loading="lazy"
+									/>
+								</div>
 								<p class="max-w-3xl text-base text-stone-700 sm:text-lg">
 									Estudiamos cómo la pandemia transformó la respuesta educativa en todos los niveles —
 									Ed. Primaria, ESO, Bachillerato, Formación Profesional y Programas de Formación Profesional
@@ -103,7 +92,7 @@ const pageDescription =
 								<div class="flex flex-col gap-3 sm:flex-row">
 									<a
 										href="/proyecto"
-										class="no-underline rounded-full bg-sky-600 px-6 py-3 text-center text-sm font-semibold text-white shadow-md shadow-sky-200 transition hover:bg-sky-500"
+										class="no-underline rounded-full border border-sky-200 px-6 py-3 text-center text-sm font-semibold text-sky-800 transition hover:border-sky-400 hover:text-sky-600"
 										>Explorar el proyecto</a
 									>
 									<a
@@ -236,8 +225,7 @@ const pageDescription =
 						</p>
 					</div>
 					<a
-						class="inline-flex w-full items-center justify-center rounded-full border border-sky-200 bg-sky-500 px-5 py-3 text-base font-semibold text-white no-underline transition hover:border-sky-300 hover:bg-sky-600 md:w-auto"
-						href="https://www.cajacanarias.com/agenda/ayudas-proyectos-investigacion-2020/#Resoluci%C3%B3n--"
+						class="no-underline rounded-full border border-sky-200 px-6 py-3 text-center text-sm font-semibold text-sky-800 transition hover:border-sky-400 hover:text-sky-600"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
