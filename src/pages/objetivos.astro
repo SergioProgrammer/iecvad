@@ -18,16 +18,38 @@ const objetivos = [
 
 const fases = [
 	{
-		nombre: 'Observación',
-		items: ['Revisión documental', 'Encuestas a centros', 'Indicadores académicos y sociales']
+		nombre: 'Fase 1',
+		descripcion:
+			'Se revisaron estudios previos y se definieron las áreas de estudio, así como los instrumentos de recogida de datos.',
+		items: [
+			'Revisión de investigaciones y literatura existente',
+			'Análisis documental y valoración crítica de la información recopilada',
+			'Definición precisa de las áreas de interés',
+			'Entrenamiento para la administración de instrumentos estandarizados',
+			'Elaboración de guiones para entrevistas semiestructuradas'
+		]
 	},
 	{
-		nombre: 'Contrastación',
-		items: ['Entrevistas en profundidad', 'Laboratorios de co-diseño', 'Validación con expertos']
+		nombre: 'Fase 2',
+		descripcion: 'Se desarrolló la recolección de datos en contacto directo con los participantes.',
+		items: [
+			'Selección de la muestra (alumnado, familia y profesorado)',
+			'Contacto con centros educativos y familias participantes',
+			'Estudio de las características de la población',
+			'Aplicación de cuestionarios y realización de entrevistas a alumnado con NEAE y NEE, sus familias y el profesorado'
+		]
 	},
 	{
-		nombre: 'Acción',
-		items: ['Acompañamiento técnico', 'Publicaciones y guías', 'Seguimiento de implementación']
+		nombre: 'Fase 3',
+		descripcion:
+			'Se procesaron y examinaron los datos obtenidos en las fases anteriores para generar conclusiones.',
+		items: [
+			'Transcripción y categorización de datos cualitativos (entrevistas)',
+			'Análisis estadístico de datos cuantitativos (cuestionarios)',
+			'Valoración e interpretación de resultados',
+			'Presentación de hallazgos y reflexión sobre dificultades',
+			'Elaboración de las conclusiones finales'
+		]
 	}
 ];
 
@@ -87,22 +109,29 @@ const pageDescription =
 			</section>
 
 			<section class="rounded-[32px] border border-sky-100 bg-gradient-to-br from-white via-sky-50 to-blue-50/80 p-8 shadow-xl shadow-sky-100/50">
-				<h2 class="text-balance text-2xl font-semibold text-stone-900">Fases operativas</h2>
-				<p class="text-pretty mt-3 leading-relaxed text-stone-700">
-					El avance del proyecto se estructura en tres momentos conectados. Cada fase produce entregables que
-					se comparten con la comunidad educativa para recibir retroalimentación y ajustar las acciones de
-					acuerdo con las necesidades reales.
-				</p>
-				<div class="mt-8 grid gap-6 md:grid-cols-3">
-					{fases.map(({ nombre, items }) => (
-						<article class="rounded-3xl border border-white/60 bg-white/70 p-5">
-							<p class="text-xs font-semibold uppercase tracking-[0.35em] text-sky-700">Fase</p>
-							<h3 class="text-balance mt-2 text-xl font-semibold text-stone-900">{nombre}</h3>
-							<ul class="mt-3 space-y-2 text-sm leading-relaxed text-stone-700">
+				<div class="text-center lg:text-left">
+					<p class="text-xs font-semibold uppercase tracking-[0.35em] text-sky-700">
+						Desarrollo del proyecto
+					</p>
+					<h2 class="text-balance text-3xl font-semibold text-stone-900">Fases del proyecto</h2>
+					<p class="text-pretty mt-3 leading-relaxed text-stone-700">
+						Cada fase retoma los hallazgos de la anterior para avanzar desde la revisión documental hasta la
+						sistematización de resultados y conclusiones finales.
+					</p>
+				</div>
+				<div class="mt-10 space-y-8 lg:flex lg:items-stretch lg:gap-6 lg:space-y-0">
+					{fases.map(({ nombre, descripcion, items }, idx) => (
+						<article class="relative flex-1 rounded-[28px] border border-white/60 bg-white/80 p-5 shadow-lg shadow-sky-100/40">
+							<div class="rounded-2xl border border-sky-100 bg-white p-4 text-center text-white">
+								<p class="text-xs font-semibold uppercase tracking-[0.4em]">Fase {idx + 1}</p>
+								<p class="text-pretty mt-2 text-sm font-medium">{nombre}</p>
+							</div>
+							<p class="text-pretty mt-4 text-sm leading-relaxed text-stone-700">{descripcion}</p>
+							<div class="mt-4 space-y-2 rounded-2xl border border-sky-100 bg-sky-50/80 p-4">
 								{items.map((item) => (
-									<li class="break-anywhere">• {item}</li>
+									<p class="break-anywhere text-sm leading-relaxed text-stone-800">• {item}</p>
 								))}
-							</ul>
+							</div>
 						</article>
 					))}
 				</div>

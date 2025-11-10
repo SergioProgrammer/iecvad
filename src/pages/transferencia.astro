@@ -1,60 +1,101 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const publicaciones = [
+const publicacionesPorObjetivo = [
 	{
-		numero: '1',
-		referencia:
-			'Rodríguez-Jiménez, M. C., Jorge, D. P., González-Contreras, A. I. & Zabala, E. L. (2023). Development and validation of EDU-COV-NEE-NEAE questionnaire to measure educational response, ICT usage and impact of COVID-19 pandemic on students with special educational needs. Heliyon, 9(9): e19231. DOI: 10.1016/j.heliyon.2023.e19231',
-		img: '/6.png'
+		objetivo: 'Objetivo 1',
+		items: [
+			{
+				numero: '1',
+				img: '/6.png',
+				contenido: `
+Rodríguez-Jiménez, M. C., Jorge, D. P., González-Contreras, A. I. &amp; Zabala, E. L. (2023).<br />
+Development and validation of EDU-COV-NEE-NEAE questionnaire to measure educational response, ICT usage and impact of COVID-19 pandemic on students with special educational needs.<br />
+<em>Heliyon</em>, 9(9): e19231.<br />
+<a href="https://doi.org/10.1016/j.heliyon.2023.e19231" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.heliyon.2023.e19231</a>
+				`.trim()
+			},
+			{
+				numero: '2',
+				img: '/7.png',
+				contenido: `
+Rodríguez-Jiménez, M. C., González Weiskorn, J., Puerta Araña, I., González-Afonso, M. C. (2024).<br />
+Explorando la realidad educativa: percepciones, actitudes y formación del profesorado de secundaria en Canarias hacia la inclusión y las TIC.<br />
+En <em>Educar para la Felicidad</em> (pp. 234-241). 978-84-1070-785-6
+				`.trim()
+			},
+			{
+				numero: '3',
+				img: '/8.png',
+				contenido: `
+Pérez-Jorge, D. (2023).<br />
+Las competencias en tecnologías de la información y la comunicación del profesorado de México, en la mejora de la respuesta educativa al alumnado con NEE y NEAE.<br />
+En <em>La escuela promotora de derechos, buen trato y participación.: Revisiones, estudios y experiencias</em> (pp. 980-988). Octaedro. 978-84-19690-00-5
+				`.trim()
+			},
+			{
+				numero: '4',
+				img: '/9.png',
+				contenido: `
+Pérez-Jorge, D., González-Herrera, A. I., Alonso-Rodríguez, I., y Rodríguez-Jiménez, M. d. C. (2024).<br />
+Challenges and Opportunities in Inclusive Education with ICT: Teachers’ Perspectives in the Canary Islands during the COVID-19 Pandemic.<br />
+<em>Education Sciences</em>, 14, 283.<br />
+<a href="https://doi.org/10.3390/educsci14030283" target="_blank" rel="noopener noreferrer">https://doi.org/10.3390/educsci14030283</a>
+				`.trim()
+			},
+			{
+				numero: '5',
+				img: '/educar.png',
+				contenido: `
+González-Afonso, M. C., Becerra Brito, M. B., Puerta Araña, I., y Rodríguez-Jiménez, M. C. (2024).<br />
+Barreras para la inclusión educativa del profesorado de secundaria: ¿actitudes o formación?.<br />
+En <em>Educar para la Felicidad</em> (pp. 242-250). Dykinson EBOOK. 978-84-1070-785-6<br />
+<a href="https://www.dykinson.com/media/pdf/indice978-84-1070-785-6.pdf" target="_blank" rel="noopener noreferrer">https://www.dykinson.com/media/pdf/indice978-84-1070-785-6.pdf</a>
+				`.trim()
+			}
+		]
 	},
 	{
-		numero: '2',
-		referencia:
-			'Rodríguez-Jiménez, M.C., González Weiskorn, J., Puerta Araña, I., González-Afonso, M.C. (2024). Explorando la realidad educativa: percepciones, actitudes y formación del profesorado de secundaria en canarias hacia la inclusión y las TIC. En Educar para la Felicidad (pp.234-241). 978-84-1070-785-6',
-		img: '/7.png'
-	},
-	{
-		numero: '3',
-		referencia:
-			'Pérez-Jorge, D. (2023). Las competencias en tecnologías de la información y la comunicación del profesorado de México, en la mejora de la respuesta educativa al alumnado con NEE y NEAE. In La escuela promotora de derechos, buen trato y participación.: Revisiones, estudios y experiencias (pp. 980-988). Octaedro. 978-84-19690-00-5',
-		img: '/8.png'
-	},
-	{
-		numero: '4',
-		referencia:
-			'Pérez-Jorge, D., González-Herrera, A.I., Alonso-Rodríguez, I., y Rodríguez-Jiménez, M.d.C. (2024). Challenges and Opportunities in Inclusive Education with ICT: Teachers’ Perspectives in the Canary Islands during the COVID-19 Pandemic. Education Sciencies, 14, 283. https://doi.org/10.3390/educsci14030283',
-		img: '/9.png'
-	},
-	{
-		numero: '5',
-		referencia:
-			'González-Afonso, M.C., Becerra Brito, M.B., Puerta Araña, I., y Rodríguez-Jiménez, M.C. (2024). Barreras para la inclusión educativa del profesorado de secundaria: ¿actitudes o formación?. En Educar para la Felicidad (pp. 242-250). Dykinson EBOOK. 978-84-1070-785-6 https://www.dykinson.com/media/pdf/indice978-84-1070-785-6.pdf',
-		img: '/10.png'
-	},
-	{
-		numero: '6',
-		referencia:
-			'González-Herrera, A. I., Pérez-Jorge, D., Díaz-Fuentes, Y., Rodríguez-Jiménez, M. D. C., & Ariño-Mateo, E. (2021). Dealing with stress and intervention models in families with children with autism spectrum disorder. Humanities and Social Sciences Communications, 8(1), 1-6. https://doi.org/10.1057/s41599-021-00988-3',
-		img: '/11.png'
-	},
-	{
-		numero: '7',
-		referencia:
-			'Rodríguez-Jiménez, M.d.C., Pérez-Jorge, D., Puerta-Araña, I., Ariño-Mateo, E. (2022). Quality of Life in Deafblind People and Its Effect on the Processes of Educational Adaptation and Social Inclusion in Canary Islands. Education Science, 12(7), 490. https://doi.org/10.3390/educsci12070490',
-		img: null
-	},
-	{
-		numero: '8',
-		referencia:
-			'Rodríguez-Jiménez, M. D. C., Olmo, R., Puerta-Araña, I. & González-Afonso, M. C. (2023). Calidad de vida de niños y niñas con trastorno del espectro del autismo (TEA) en el nuevo panorama Postcovid-19: Una mirada contrastante entre la autopercepción infantil y la percepción familiar en la Comunidad Autónoma de Canarias. En La escuela promotora de derechos, buen trato y participación.: Revisiones, estudios y experiencias (pp. 650-658). Octaedro. ISBN: 978-84-19690-00-5. http://doi.org/10.36006/90016-1.',
-		img: null
-	},
-	{
-		numero: '9',
-		referencia:
-			'Araña, I., González-Herrera, A.I., González-Afonso, M.C. (2024). Analysis of Quality of Life of Autistic Students on the Canary Islands during the COVID-19 Pandemic and the Educational Response Offered. Education Science,14,111. https://doi.org/10.3390/educsci14010111',
-		img: null
+		objetivo: 'Objetivo 2',
+		items: [
+			{
+				numero: '6',
+				img: '/11.png',
+				contenido: `
+González-Herrera, A. I., Pérez-Jorge, D., Díaz-Fuentes, Y., Rodríguez-Jiménez, M. D. C., &amp; Ariño-Mateo, E. (2021).<br />
+Dealing with stress and intervention models in families with children with autism spectrum disorder.<br />
+<em>Humanities and Social Sciences Communications</em>, 8(1), 1-6.<br />
+<a href="https://doi.org/10.1057/s41599-021-00988-3" target="_blank" rel="noopener noreferrer">https://doi.org/10.1057/s41599-021-00988-3</a>
+				`.trim()
+			},
+			{
+				numero: '7',
+				contenido: `
+Rodríguez-Jiménez, M. d. C., Pérez-Jorge, D., Puerta-Araña, I., Ariño-Mateo, E. (2022).<br />
+Quality of Life in Deafblind People and Its Effect on the Processes of Educational Adaptation and Social Inclusion in Canary Islands.<br />
+<em>Education Sciences</em>, 12(7), 490.<br />
+<a href="https://doi.org/10.3390/educsci12070490" target="_blank" rel="noopener noreferrer">https://doi.org/10.3390/educsci12070490</a>
+				`.trim()
+			},
+			{
+				numero: '8',
+				contenido: `
+Rodríguez-Jiménez, M. D. C., Olmo, R., Puerta-Araña, I. &amp; González-Afonso, M. C. (2023).<br />
+Calidad de vida de niños y niñas con trastorno del espectro del autismo (TEA) en el nuevo panorama Postcovid-19: Una mirada contrastante entre la autopercepción infantil y la percepción familiar en la Comunidad Autónoma de Canarias.<br />
+En <em>La escuela promotora de derechos, buen trato y participación.: Revisiones, estudios y experiencias</em> (pp. 650-658). Octaedro. ISBN: 978-84-19690-00-5.<br />
+<a href="http://doi.org/10.36006/90016-1" target="_blank" rel="noopener noreferrer">http://doi.org/10.36006/90016-1</a>
+				`.trim()
+			},
+			{
+				numero: '9',
+				contenido: `
+Araña, I., González-Herrera, A. I., González-Afonso, M. C. (2024).<br />
+Analysis of Quality of Life of Autistic Students on the Canary Islands during the COVID-19 Pandemic and the Educational Response Offered.<br />
+<em>Education Sciences</em>, 14, 111.<br />
+<a href="https://doi.org/10.3390/educsci14010111" target="_blank" rel="noopener noreferrer">https://doi.org/10.3390/educsci14010111</a>
+				`.trim()
+			}
+		]
 	}
 ];
 
@@ -107,6 +148,8 @@ const otrasPublicaciones = [
 const jornadas = [
 	{
 		titulo: 'I JORNADAS SOBRE BIENESTAR EMOCIONAL Y ESTRATEGIAS DE INTERVENCIÓN Y ASESORAMIENTO EN ALUMNADO CON NEAE Y NEE: LOS EFECTOS DE LA PANDEMIA EN CANARIAS',
+		descripcion:
+			'Espacio de encuentro para compartir estrategias de intervención y asesoramiento tras la pandemia en Canarias, con participación de familias, profesorado y especialistas.',
 		img: '/12.webp'
 	}
 ];
@@ -114,7 +157,8 @@ const jornadas = [
 const tesis = [
 	{
 		titulo:
-			'Respuesta Educativa e Inclusión durante la Pandemia por COVID-19. Evaluación e Intervención en Necesidades Educativas Especiales y de Apoyo Educativo mediante Tecnologías de la Información y la Comunicación'
+			'Respuesta Educativa e Inclusión durante la Pandemia por COVID-19. Evaluación e Intervención en Necesidades Educativas Especiales y de Apoyo Educativo mediante Tecnologías de la Información y la Comunicación',
+		img: '/inclusiva.png'
 	}
 ];
 
@@ -143,28 +187,41 @@ const pageDescription =
 
 				<section class="space-y-6">
 					<h2 class="text-balance text-2xl font-semibold text-stone-900">
-						Publicaciones científico-técnicas (con peer-review) derivadas del proyecto y patentes
+						Publicaciones científico-técnicas (con peer-review) derivadas del proyecto
 					</h2>
-					<div class="space-y-4">
-						{publicaciones.map(({ numero, referencia, img }) => (
-							<article class="rounded-2xl border border-sky-100 bg-white/85 p-4 shadow-inner shadow-sky-100/60">
-								<div class="flex flex-col gap-3 md:flex-row md:items-center md:gap-5">
-									{img && (
-										<div class="order-2 flex justify-center md:order-1 md:w-auto md:justify-start">
-											<img
-												src={img}
-												alt={`Icono de la publicación ${numero}`}
-												class="h-48 w-48 rounded-2xl border border-sky-100 object-cover shadow-sm shadow-sky-100/60 md:h-60 md:w-60"
-												loading="lazy"
-											/>
-										</div>
-									)}
-									<div class="order-1 space-y-2 text-left md:order-2 md:flex-1">
-										<p class="text-xs font-semibold uppercase tracking-[0.3em] text-sky-700">
-											Publicación {numero}
-										</p>
-										<p class="text-pretty break-anywhere text-sm leading-relaxed text-stone-700">{referencia}</p>
-									</div>
+					<div class="space-y-6">
+						{publicacionesPorObjetivo.map(({ objetivo, items }) => (
+							<article class="rounded-2xl border border-sky-100 bg-white/85 p-4 shadow-inner shadow-sky-100/60 sm:p-6">
+								<p class="text-xs font-semibold uppercase tracking-[0.4em] text-sky-700">{objetivo}</p>
+								<div class="mt-4 overflow-x-auto">
+									<table class="w-full border border-slate-200 text-sm text-stone-800">
+										<thead class="bg-sky-50 text-left text-xs font-semibold uppercase tracking-[0.2em] text-stone-600">
+											<tr>
+												<th class="border-b border-slate-200 px-4 py-3">Artículo</th>
+												<th class="border-b border-slate-200 px-4 py-3 text-right">Numeración</th>
+											</tr>
+										</thead>
+										<tbody>
+											{items.map(({ numero, contenido, img }) => (
+												<tr class="border-b border-slate-200 last:border-none">
+													<td class="px-4 py-4 align-top">
+														{img && (
+															<div class="mb-2 flex justify-start">
+																<img
+																	src={img}
+																	alt={`Icono de la publicación ${numero}`}
+																	class="h-4 w-auto rounded border border-sky-100 object-contain shadow-sm shadow-sky-100/60"
+																	loading="lazy"
+																/>
+															</div>
+														)}
+														<p class="text-pretty break-anywhere leading-relaxed" set:html={contenido}></p>
+													</td>
+													<td class="px-4 py-4 text-right align-top font-semibold text-stone-900">{numero}</td>
+												</tr>
+											))}
+										</tbody>
+									</table>
 								</div>
 							</article>
 						))}
@@ -227,10 +284,22 @@ const pageDescription =
 				<section class="space-y-6">
 					<h2 class="text-balance text-2xl font-semibold text-stone-900">Tesis Doctoral</h2>
 					<div class="space-y-4">
-						{tesis.map(({ titulo }) => (
+						{tesis.map(({ titulo, img }) => (
 							<article class="rounded-2xl border border-sky-100 bg-white/85 p-4 shadow-inner shadow-sky-100/60">
-								<p class="text-pretty break-anywhere text-sm leading-relaxed text-stone-700">{titulo}</p>
+								<h3 class="text-balance text-lg font-semibold text-stone-900">Respuesta Educativa e Inclusión</h3>
+								<p class="text-pretty mt-2 text-sm leading-relaxed text-stone-700">{titulo}</p>
+								{img && (
+									<img
+										src={img}
+										alt="Imagen de la tesis doctoral"
+										class="mt-4 w-full rounded-2xl border border-sky-100 bg-white object-contain shadow-sm shadow-sky-100/60 md:max-h-[36rem]"
+										loading="lazy"
+									/>
+								)}
 							</article>
 						))}
 					</div>
 				</section>
+			</article>
+		</div>
+	</Layout>
